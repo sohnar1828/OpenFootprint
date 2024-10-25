@@ -8,13 +8,15 @@ Our SQL Team has been generating <a href="/OpenFootprint/prep/sql/supabase/">Sup
 
 We're imitating the data migration in [generate\_import\_factors.py](https://github.com/ModelEarth/USEEIO/tree/master/import_factors_exio) but we're push directly to Supabase (avoiding csv files).  We're changing FlowUUID to FactorID to reduce the data size.
 
-TO DO: Pulling from Exiobase directly to GitHub and sending to Supabase.  
-Contribute in our [Exiobase To Github Pipeline (Gary's)](https://colab.research.google.com/drive/1BQZZ5EZTFr422_SUH7iAQ7uuwsM1KUYj#scrollTo=DXUJfJENmzxu) 
+TO DO: Pulling from Exiobase directly to GitHub and sending to DuckDB and Supabase.  
 
-Pulls zip of year from Exiobase and unzips  
+**Contribute to:**   
+[Exiobase To Github Pipeline (by Gary)](https://colab.research.google.com/drive/1BQZZ5EZTFr422_SUH7iAQ7uuwsM1KUYj#scrollTo=DXUJfJENmzxu) 
 
+- Pulls zip of year from Exiobase and unzips  
+- Will send to DuckDB instance for a country and year
 
-and our [ExiobaseSupabase CoLab](https://colab.research.google.com/drive/1LsEDmXrAAGs40OiAKWH48K63E_2bMGBb?usp=sharing).<!-- Himanshu, Sahil, Ben, Parth, Jack, Satwik, Indrasenareddy-->
+[ExiobaseSupabase CoLab](https://colab.research.google.com/drive/1LsEDmXrAAGs40OiAKWH48K63E_2bMGBb?usp=sharing)<!-- Himanshu, Sahil, Ben, Parth, Jack, Satwik, Indrasenareddy--> and [New version by Gary](https://colab.research.google.com/drive/16a2pykb_ycfHhAhxK949giWuVf3c_IeD)
 
 TO DO: Update the ExiobaseSupabase CoLab above to pull the same data as <a href="https://github.com/ModelEarth/USEEIO/tree/master/import_factors_exio">generate\_import\_factors.py</a>. Test with the US.  We'll send about 8 countries to unique Supabase instances for the year 2020. <!-- Yuhao, Ruolin, Nancy-->
 
