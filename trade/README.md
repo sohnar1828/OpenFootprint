@@ -1,8 +1,6 @@
 [Active Projects](../../projects/) - [State Javascript](/useeio.js/footprint/) and [State Models](/io/about/)
 <h1>International Trade Flow</h1>
 
-https://github.com/USEPA/useeio-widgets/issues/98
-
 <b>Exiobase International Trade Data + US Bureau of Economic Analysis (BEA)</b>
 Our SQL Team has been generating <a href="/OpenFootprint/prep/sql/supabase/">Supabase</a> and <a href="/OpenFootprint/prep/sql/duckdb/">DuckDB</a> databases for comparing industries and identifying imports with positive environmental impacts.
 
@@ -11,20 +9,26 @@ We're imitating the data migration in [generate\_import\_factors.py](https://git
 TO DO: Pulling from Exiobase directly to GitHub and sending to DuckDB and Supabase.  
 
 **Contribute to:**   
-[Exiobase To Github Pipeline (by Gary)](https://colab.research.google.com/drive/1BQZZ5EZTFr422_SUH7iAQ7uuwsM1KUYj#scrollTo=DXUJfJENmzxu) 
+[Exiobase To Github Pipeline](https://colab.research.google.com/drive/1BQZZ5EZTFr422_SUH7iAQ7uuwsM1KUYj#scrollTo=DXUJfJENmzxu) - Gary and SQL team
 
 - Pulls zip of year from Exiobase and unzips  
-- Will send to DuckDB instance for a country and year
+- Will send to DuckDB instance for a country and year - See our [zip code DuckDB](https://model.earth/community-zipcodes/) sample
 
-[ExiobaseSupabase CoLab](https://colab.research.google.com/drive/1LsEDmXrAAGs40OiAKWH48K63E_2bMGBb?usp=sharing)<!-- Himanshu, Sahil, Ben, Parth, Jack, Satwik, Indrasenareddy--> and [New version by Gary](https://colab.research.google.com/drive/16a2pykb_ycfHhAhxK949giWuVf3c_IeD)
+We'll send about 8 countries to unique Supabase instances for the year 2020.
 
-TO DO: Update the ExiobaseSupabase CoLab above to pull the same data as <a href="https://github.com/ModelEarth/USEEIO/tree/master/import_factors_exio">generate\_import\_factors.py</a>. Test with the US.  We'll send about 8 countries to unique Supabase instances for the year 2020. <!-- Yuhao, Ruolin, Nancy-->
-
-TO DO: Experiment in our [Pymiro CoLab](https://colab.research.google.com/drive/1Q9_1AhdY8uPUfLVUN71X6mKbEy_kqPuQ?usp=sharing) using the [Pymiro for Exiobase library](https://pymrio.readthedocs.io/en/latest/).
+TO DO: Experiment in our [Pymiro CoLab](https://colab.research.google.com/drive/1Q9_1AhdY8uPUfLVUN71X6mKbEy_kqPuQ?usp=sharing) using the [Pymiro for Exiobase library](https://pymrio.readthedocs.io/en/latest/) to add to the DuckDB country-year data instances.
 
 Jaya and Satwick are investigating using .feather within the Pymiro CoLab.
 
-The [Big Sankey](https://github.com/baptiste-an/Application-mapping-GHG) ([view chart](https://sankey.theshiftproject.org/)) uses Plotly with .feather files. We could do the same with [Anvil](https://anvil.works). 
+The [Big Sankey](https://github.com/baptiste-an/Application-mapping-GHG) ([view chart](https://sankey.theshiftproject.org/)) uses Plotly with .feather files. We could do the same with [Anvil](https://anvil.works) and Google Looker. 
+
+[ExiobaseSupabase CoLab](https://colab.research.google.com/drive/1LsEDmXrAAGs40OiAKWH48K63E_2bMGBb?usp=sharing)<!-- Himanshu, Sahil, Ben, Parth, Jack, Satwik, Indrasenareddy--> and [New version by Gary](https://colab.research.google.com/drive/16a2pykb_ycfHhAhxK949giWuVf3c_IeD)
+
+TO DO: Update the ExiobaseSupabase CoLab above to also pull the BEA data to match the <a href="https://github.com/ModelEarth/USEEIO/tree/master/import_factors_exio">generate\_import\_factors.py</a>. Test with the US.   <!-- Yuhao, Ruolin, Nancy-->
+
+## International Trade Flow/Impact Visualizations
+
+See chart starter sample in upper right.
 
 <!--
 In the CoLab, add the [Sector table output](https://github.com/ModelEarth/USEEIO/commit/c10d087d916477b3335127de560d4689fa5818ea) Ben created.
