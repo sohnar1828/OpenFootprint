@@ -16,6 +16,8 @@ TO DO: Pulling from Exiobase directly to GitHub and sending to DuckDB and Supaba
 
 We'll send about 8 countries to unique Supabase instances for the year 2020.
 
+Copy and add to Satwick's [PYMRIO.ipynb CoLab](https://colab.research.google.com/drive/1AZPfBlG0iUKmKRZjlNxn8uOuvtAfEarn?usp=sharing)
+
 TO DO: Experiment in our [Pymiro CoLab](https://colab.research.google.com/drive/1Q9_1AhdY8uPUfLVUN71X6mKbEy_kqPuQ?usp=sharing) using the [Pymiro for Exiobase library](https://pymrio.readthedocs.io/en/latest/) to add to the DuckDB country-year data instances.
 
 Jaya and Satwick are investigating using .feather within the Pymiro CoLab.
