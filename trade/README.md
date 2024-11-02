@@ -9,7 +9,8 @@ We're imitating the data migration in [generate\_import\_factors.py](https://git
 TO DO: Pulling from Exiobase directly to GitHub and sending to DuckDB and Supabase.  
 
 **Contribute to:**   
-[Exiobase To Github Pipeline](https://colab.research.google.com/drive/1BQZZ5EZTFr422_SUH7iAQ7uuwsM1KUYj#scrollTo=DXUJfJENmzxu) - Gary and SQL team
+[Exiobase To Github Pipeline](https://colab.research.google.com/drive/1BQZZ5EZTFr422_SUH7iAQ7uuwsM1KUYj#scrollTo=DXUJfJENmzxu) - Gary and SQL team  
+[Create Database from Panda Dataframe](https://colab.research.google.com/drive/1hUP1r4zSsjkjYftVmzqFzoXFbfY6YI0n?usp=sharing) - Gary and SQL team  
 
 - Pulls zip of year from Exiobase and unzips  
 - Will send to DuckDB instance for a country and year - See our [zip code DuckDB](https://model.earth/community-zipcodes/) sample
