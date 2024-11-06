@@ -46,20 +46,29 @@ def get_auth():
         print("Response body:" + response_auth.json())
         return None
 
-def fetch_a_page(page: int, headers, state: str) -> list:
-    logging.info(f'Fetching state: {state}, page: {page}')
-    params = {"plant_geography": state, "page_size": page_size, "page_number": page}
+def fetch_data_with_retry(epds_url, headers, params):
+    max_retries = 5
+    base_delay = 5  # Base delay of 5 seconds
 
-    for attempt in range(5):  # Retry up to 5 times
-        response = requests.get(epds_url, headers=headers, params=params)
-        if response.status_code == 200:
-            return json.loads(response.text)
-        elif response.status_code == 429:
-            log_error(response.status_code, "Rate limit exceeded. Retrying...")
-            time.sleep(2 ** attempt + 5)  # Increased delay and added a base delay of 5 seconds
-        else:
-            log_error(response.status_code, str(response.json()))
-            return []
+    for attempt in range(max_retries):
+        try:
+            response = requests.get(epds_url, headers=headers, params=params, timeout=10)
+            if response.status_code == 200:
+                return response.json()  # Directly use response.json() instead of parsing text
+            elif response.status_code == 429:
+                log_error(response.status_code, "Rate limit exceeded. Retrying...")
+                time.sleep(2 ** attempt + base_delay)
+            else:
+                log_error(response.status_code, response.text)  # Log the entire response text if status != 200
+                return None  # Return None on unexpected status
+        except requests.exceptions.RequestException as e:
+            log_error("Exception", f"Request failed: {e}. Retrying...")
+            time.sleep(2 ** attempt + base_delay)
+
+    # If all attempts fail
+    log_error("Error", "Max retries exceeded. Could not fetch data.")
+    return None
+
 
     return []  # Return empty list if all attempts fail
 
