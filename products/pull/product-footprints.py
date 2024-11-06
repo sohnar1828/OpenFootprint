@@ -70,7 +70,7 @@ def fetch_data_with_retry(epds_url, headers, params):
     return None
 
 
-    return []  # Return empty list if all attempts fail
+   #return []  # Return empty list if all attempts fail
 
 def fetch_epds(state: str, authorization) -> list:
     params = {"plant_geography": state, "page_size": page_size}
