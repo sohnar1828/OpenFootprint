@@ -17,17 +17,23 @@ How to run our repos in a Webroot folder on your computer:
 
 ## Fetch Product Data
 
-[Python for our EPD pull](https://github.com/ModelEarth/OpenFootprint/tree/main/products/pull/)<!-- product-footprints.py --> - [Resulting Data](https://github.com/ModelEarth/OpenFootprint/tree/main/products/US)
-We're also experimenting with [pulling directly to json](pull/get-json/)
+1. Fork and clone the [Openfootprint Repo](https://github.com/ModelEarth/OpenFootprint) for 
 
-TO DO: Pull csv lists for all states (without cement). Save details as indvidual YAML files. Include all the impact (emmissions, etc) in each profile. Login to BuildingTransparency.org to view a [detail sample](https://buildingtransparency.org/ec3/epds/ec3mmgup).  Update our notes with your findings and progress. You can use Postman or another app to explore the BuildingTransparency APIs.
+2. In our products/pull folder myconfig.py file, you'll add a username and password.
+
+3. Get your login from the [BuildingTransparency.org](https://BuildingTransparency.org) website
+
+4. TO DO: Pull csv lists with product emission impacts for all states (save cement products in other folder). 
+by updating our [Python Profile pull](https://github.com/ModelEarth/OpenFootprint/tree/main/products/pull/)<!-- product-footprints.py -->. View [Resulting Data](https://github.com/ModelEarth/OpenFootprint/tree/main/products/US).
+
+Save emissions info within our indvidual YAML files. Include all the impact (emmissions, etc) in each profile. Login to BuildingTransparency.org to view a [detail sample](https://buildingtransparency.org/ec3/epds/ec3mmgup).  Update our notes with your findings and progress. You can use Postman or another app to explore the BuildingTransparency APIs.
 
 June 3, 2024 - <!--Loren -->We copied [product-footprints.py](https://github.com/ModelEarth/OpenFootprint/tree/main/products/pull/) into [Product Footprints Colab](https://colab.research.google.com/drive/1TJ1fn0-_8EBryN3ih5hZiKLISomOrWDW?usp=sharing)
 (We haven't run as CoLab yet.)
 
-For products/pull/product-footprints.py you can set your BuildingTransparency email and password in myconfig.py to call the API.
+For products/pull/product-footprints.py you can set your BuildingTransparency email and password in [myconfig.py](https://github.com/ModelEarth/OpenFootprint/tree/main/products/pull/) to call the API.
 
-Active notes are in our Discord group.
+TO DO: Might not work. We're also experimenting with [pulling directly to json](pull/get-json/)
 
 
 ## Get API Key for Product Profile YAML
