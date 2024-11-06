@@ -17,11 +17,33 @@ How to run our repos in a Webroot folder on your computer:
 
 ## Fetch Product Data
 
+Our GitHub Action needs help to pull update_csv_and_yaml.py every night
+
 1. Fork and clone the [Openfootprint Repo](https://github.com/ModelEarth/OpenFootprint) for 
 
 2. In our products/pull folder myconfig.py file, you'll add a username and password.
 
 3. Get your login from the [BuildingTransparency.org](https://BuildingTransparency.org) website
+
+For products/pull/product-footprints.py set your BuildingTransparency email and password in [myconfig.py](https://github.com/ModelEarth/OpenFootprint/tree/main/products/pull/) to call the API.
+
+
+  python3 -m venv env
+  source env/bin/activate
+
+For Windows,
+
+  python3 -m venv env
+  .\env\Scripts\activate
+
+Run in "pull" folder
+
+  pip install requests pandas pyyaml
+  python product-footprints.py
+
+
+Current Error: Max retries exceeded with url: /api/rest-auth/login (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x104c69c70>, 'Connection to etl-api.cqd.io timed out. (connect timeout=None)'))
+
 
 4. TO DO: Pull csv lists with product emission impacts for all states (save cement products in other folder). 
 by updating our [Python Profile pull](https://github.com/ModelEarth/OpenFootprint/tree/main/products/pull/)<!-- product-footprints.py -->. View [Resulting Data](https://github.com/ModelEarth/OpenFootprint/tree/main/products/US).
@@ -31,7 +53,6 @@ Save emissions info within our indvidual YAML files. Include all the impact (emm
 June 3, 2024 - <!--Loren -->We copied [product-footprints.py](https://github.com/ModelEarth/OpenFootprint/tree/main/products/pull/) into [Product Footprints Colab](https://colab.research.google.com/drive/1TJ1fn0-_8EBryN3ih5hZiKLISomOrWDW?usp=sharing)
 (We haven't run as CoLab yet.)
 
-For products/pull/product-footprints.py you can set your BuildingTransparency email and password in [myconfig.py](https://github.com/ModelEarth/OpenFootprint/tree/main/products/pull/) to call the API.
 
 TO DO: Might not work. We're also experimenting with [pulling directly to json](pull/get-json/)
 
